@@ -36,6 +36,8 @@ module.exports = {
         // include: path.resolve(__dirname,'src'),  使用node的path模块
         loader: 'babel',//在webpack的module部分的loaders里进行配置即可
       },
+      /*  
+      // 以下配置可搞定通用项目的leader style,css,less,sass,图片等
       // npm install style-loader css-loader --save-dev
       {
         test: /\.css$/,
@@ -103,6 +105,7 @@ module.exports = {
         // loader: 'file-loader'
         // loader: 'file-loader?name=videos/[name].[ext]'
       }
+      */
     ]
   }, 
   // npm install postcss-loader
@@ -127,18 +130,18 @@ module.exports = {
     colors: true,//终端中输出结果为彩色
     historyApiFallback: true,//不跳转
     inline: true,//实时刷新
-    host: '0.0.0.0', 
-    port: "8866",
-    historyApiFallback: true,
-    hot :true,
-    proxy: {
-      '/zsapi/*': {
-        target: 'https://api.douban.com',
-        changeOrigin: true,
-        pathRewrite: {
-          '^/zsapi/': ''
-        }
-      }
-    }
+    // host: '0.0.0.0', 
+    // port: "8866",
+    // historyApiFallback: true,
+    // hot :true,
+    // proxy: {
+    //   '/zsapi/*': {
+    //     target: 'https://api.douban.com',
+    //     changeOrigin: true,
+    //     pathRewrite: {
+    //       '^/zsapi/': ''
+    //     }
+    //   }
+    // }
   } 
 }
