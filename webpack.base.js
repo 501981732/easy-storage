@@ -1,8 +1,8 @@
 var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+// var HtmlWebpackPlugin = require('HtmlWebpackPlugin');
 var path    = require('path');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
-var HappyPack = require('happypack');
+// var CopyWebpackPlugin = require('copy-webpack-plugin');
+// var HappyPack = require('happypack');
 
 const paths = {
   app: path.join(__dirname, 'static'),
@@ -32,9 +32,9 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/, //排除范围，这样解析会快  相对有include 
-        include: './src ',
+        // include: './src ',
         // include: path.resolve(__dirname,'src'),  使用node的path模块
-        loader: 'babel',//在webpack的module部分的loaders里进行配置即可
+        // loader: 'babel',//在webpack的module部分的loaders里进行配置即可
       },
       /*  
       // 以下配置可搞定通用项目的leader style,css,less,sass,图片等
@@ -109,20 +109,20 @@ module.exports = {
     ]
   }, 
   // npm install postcss-loader
-  postcss: [
-    require('autoprefixer')//调用autoprefixer插件
-  ],
+  // postcss: [
+  // require('autoprefixer')//调用autoprefixer插件
+  // ],
   
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: __dirname + "/src/index.html"//new 一个这个插件的实例，并传入相关的参数
-    }),
-    new webpack.HotModuleReplacementPlugin(),//热加载插件
-    new HappyPack({
-      id: 'scss',
-      loaders: ['style!css?modules&importLoaders=1&localIdentName=[name]-[local]-[hash:base64:5]!sass'],
-    })
-  ],
+  // plugins: [
+    // new HtmlWebpackPlugin({
+    //   template: __dirname + "/src/index.html"//new 一个这个插件的实例，并传入相关的参数
+    // }),
+    // new webpack.HotModuleReplacementPlugin(),//热加载插件
+    // new HappyPack({
+    //   id: 'scss',
+    //   loaders: ['style!css?modules&importLoaders=1&localIdentName=[name]-[local]-[hash:base64:5]!sass'],
+    // })
+  // ],
 
   devServer: {
     contentBase: "./public",//本地服务器所加载的页面所在的目录
