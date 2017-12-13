@@ -31,6 +31,6 @@ function deserialize(val) {
         } catch(e) {
             return val || undefined
         }
-    }
+    }  
 }
 export default store
